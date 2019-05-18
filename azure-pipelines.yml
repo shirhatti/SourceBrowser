@@ -10,8 +10,8 @@ steps:
     filePath: 'build.ps1'
     arguments: '-OutDir $(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@0
+  displayName: 'Publish pipeline artifact'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    artifactName: 'site'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
