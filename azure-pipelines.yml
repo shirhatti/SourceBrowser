@@ -1,0 +1,11 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- task: PowerShell@2
+  inputs:
+    filePath: 'build.ps1'
+    arguments: '-OutDir $(Build.ArtifactStagingDirectory)'
