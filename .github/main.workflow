@@ -1,9 +1,8 @@
-workflow "Update sub-modules" {
-  resolves = ["Bump Git Submodules"]
-  on = "schedule(0 1 * * *)"
+workflow "Bump Submodules" {
+  on = "issue_comment"
+  resolves = ["bump-submodules"]
 }
 
-action "Bump Git Submodules" {
+action "bump-submodules" {
   uses = "domdere/git-submodule-action@master"
-  secrets = ["GITHUB_TOKEN"]
 }
