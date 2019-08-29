@@ -4,6 +4,6 @@ workflow "Update sub-modules" {
 }
 
 action "Bump Git Submodules" {
-  uses = "domdere/git-submodule-action@0.0.1"
+  uses = "domdere/git-submodule-action@master"
   secrets = ["GITHUB_TOKEN"]
 }
